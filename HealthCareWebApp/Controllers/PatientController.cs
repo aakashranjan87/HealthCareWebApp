@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using HealthCareWebApp.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HealthCareWebApp.Controllers
 {
