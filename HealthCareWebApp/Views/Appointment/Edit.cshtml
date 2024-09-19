@@ -1,0 +1,28 @@
+﻿@model HealthCareWebApp.Models.Appointment
+@{
+    ViewData["Title"] = "Edit Appointment";
+    var patients = ViewData["Patients"] as List<HealthCareWebApp.Models.Patient>;
+}
+
+<h2>Edit Appointment</h2>
+
+<form asp-action="Edit">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="AppointmentDate" class="control-label"></label>
+        <input asp-for="AppointmentDate" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="DoctorName" class="control-label"></label>
+        <input asp-for="DoctorName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="PatientId" class="control-label">Patient</label>
+        <select asp-for="PatientId" class="form-control" asp-items="@(new SelectList(patients, "Id", "Name"))"></select>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+    </div>
+</form>
+
+<a asp-action="Index">Back to List</a>
